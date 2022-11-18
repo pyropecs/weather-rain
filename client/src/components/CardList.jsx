@@ -4,15 +4,23 @@ const CardList = ({
   altitude,
   dew_point,
   pressure,
-  rain,
+
   temperature,
   time,
 }) => {
-  const infoList = ["Time", "Temperature", "Altitude", "Pressure", "Dew Point"];
-  const dateTime = new Date(time);
-  const month = dateTime.toLocaleString("default", { month: "short" });
-  const localTime = dateTime.toLocaleTimeString();
-  const Time = `${dateTime.getDay()} ${month} ${localTime} `;
+  const infoList = [
+    "Date and Time",
+    "Temperature",
+    "Altitude",
+    "Pressure",
+    "Dew Point",
+  ];
+
+  const localTime = time.toLocaleString();
+  const now = Date.now();
+  const lime = new Date(now);
+  const string = lime.toLocaleString();
+  const Time = `${string} `;
 
   const units = [
     Time,
